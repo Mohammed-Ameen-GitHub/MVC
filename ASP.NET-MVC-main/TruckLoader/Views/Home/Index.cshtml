@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "Truck Loader Services";
+}
+
+@{
+    Layout = null;
+}
+
+
+<html>
+<head>
+    <title>@ViewBag.Title -  Truck Loader Services Application</title>
+    <style>
+        body {
+            background-image: url(../Images/Truck.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            align-content: center;
+        }
+
+        h1 {
+            font-family: 'Lucida Bright';
+            color: white;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        h3 {
+            font-family: 'Lucida Bright';
+            color: white;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            vertical-align: middle;
+            width: 300px;
+        }
+
+        .center {
+            line-height: normal;
+            height: 200px;
+            text-align: center;
+        }
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+            margin: 50px 100px 90px 40px;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .left {
+            float: left;
+            margin-left: 200px;
+        }
+
+        .right {
+            float: right;
+            margin-left: 100px;
+        }
+
+        a {
+            color: white;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="center">
+        <h1>Truck Loader Services</h1>
+        <h3> Making Services Simpler </h3>
+        <div class="row">
+            <div class="column">
+                <div class="left">
+                    <a href="@Url.Action("Login", "Transporters", null)">
+                        <img src="~/Images/Transporters.jpg" runat="server" />
+                        Transporters
+                    </a>
+                </div>
+            </div>
+            <div class="column">
+                <div class="left">
+                    <a href="@Url.Action("Logins", "Customers", null)">
+                        <img src="~/Images/Customers.jpg" runat="server" />
+                        Customers
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+﻿@model TruckLoader.Models.Customer
+
+@{
+    ViewBag.Title = "Customer Login";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h2>Customer Login</h2>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.GoodsType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.GoodsType, new List<SelectListItem>
+            {
+                    new SelectListItem() {Text = "Agricultural materials", Value="Agricultural materials"},
+                    new SelectListItem() {Text = "Automobile", Value="Automobile"},
+                    new SelectListItem() {Text = "Building Materials", Value="Building Materials"},
+                    new SelectListItem() {Text = "Cement", Value="Cement"},
+                    new SelectListItem() {Text = "Dairy Products", Value="Dairy Products"},
+                    new SelectListItem() {Text = "Fruits and Vegetables", Value="Fruits and Vegetables"},
+                    new SelectListItem() {Text = "Furniture and Households", Value="Furniture and Households"},
+                    new SelectListItem() {Text = "Machinery and Equipments", Value="Machinery and Equipments"},
+                    new SelectListItem() {Text = "Paints/Lubricants/Chemicals", Value="Paints/Lubricants/Chemicals"},
+                    new SelectListItem() {Text = "Steel and Metal Products", Value="Steel and Metal Products"},
+                    new SelectListItem() {Text = "Others", Value="Others"}
+            })
+                @Html.ValidationMessageFor(model => model.GoodsType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Area, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Area, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Area, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Proceed" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<TruckLoader.Models.Transporter>
+
+@{
+    ViewBag.Title = "Results";
+}
+
+
+<h2>Results</h2>
+
+    <table class="table">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.TypeOfTruck)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OffLoading)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Refrigerated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Charges)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdditionalCharge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DriverCharge)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeOfTruck)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OffLoading)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Refrigerated)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Charges)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdditionalCharge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DriverCharge)
+                </td>
+                <td>
+                    @Html.ActionLink("Select", "Details", new { id = item.TransporterId })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div>
+
+        <input type="button" value="Back" onclick="location.href='@Url.Action("Create", "Customers")'" />
+
+    </div>
+

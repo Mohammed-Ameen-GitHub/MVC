@@ -1,0 +1,102 @@
+﻿@model TruckLoader.Models.Transporter
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<html>
+<head>
+   
+</head>
+
+<body style="background-color:grey">
+    <div class="container">
+    <h2>Details</h2>
+
+    <div class="list-group">
+
+        <hr />
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TypeOfTruck)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TypeOfTruck)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Capacity)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Capacity)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.City)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OffLoading)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OffLoading)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Refrigerated)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Refrigerated)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ContactNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ContactNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Charges)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Charges)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AdditionalCharge)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AdditionalCharge)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DriverCharge)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DriverCharge)
+            </dd>
+
+        </dl>
+
+        <p>
+            <input type="button"  value="Done" onclick="location.href='@Url.Action("Create", "Customers")'" />
+
+        </p>
+    </div>
+        </div>
+</body>
+</html>

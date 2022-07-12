@@ -1,0 +1,80 @@
+﻿
+@model TruckLoader.Models.Login
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> Customer Registration </title>
+    <link href="@Url.Content("~/Content/Main.css")" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="bg-img">
+            <div class="content">
+                <header> Register </header>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="field space">
+
+                    <span class="fa fa-user"></span>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Name" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="field space">
+
+                    <span class="fa fa-user"></span>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="field space">
+                    <span class="fa fa-lock"></span>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="field space">
+
+                    <span class="fa fa-user"></span>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.MobileNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "MobileNumber" } })
+                        @Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="field space">
+
+                    <input type="submit" value="Register" />
+
+                </div>
+
+
+                <div class="signup">
+                    @Html.ActionLink("Back", "Logins")
+                </div>
+            </div>
+        </div>
+    }
+
+
+</body>
+</html>
+

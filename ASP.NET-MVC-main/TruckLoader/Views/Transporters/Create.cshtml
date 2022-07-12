@@ -1,0 +1,123 @@
+﻿@model TruckLoader.Models.Transporter
+
+@{
+    ViewBag.Title = "Register";
+}
+
+
+    <body>
+        <script>
+            $(".submit").click(function () {
+                alert("Registration Successfull!")
+            });
+            </script>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <h2>Transporter Registration</h2>
+            <div class="form-horizontal">
+
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.TypeOfTruck, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10" style="color:black">
+                        @Html.DropDownListFor(model => model.TypeOfTruck, new List<SelectListItem>
+                        {
+                                new SelectListItem() {Text = "Tata Ace / Pickup", Value="Tata Ace / Pickup"},
+                                new SelectListItem() {Text = "Tata 407/ Eicher 14FT", Value="Tata 407/ Eicher 14FT"},
+                                new SelectListItem() {Text = "Eicher 19FT", Value="Eicher 19FT"},
+                                new SelectListItem() {Text = "Tata Truck", Value="Tata Truck"},
+                                new SelectListItem() {Text = "32FT Container", Value="32FT Container"},
+                                new SelectListItem() {Text = "Taurus", Value="Taurus"},
+                                new SelectListItem() {Text = "Trailer 20 Feet", Value="Trailer 20 Feet"}
+                        })
+                        @Html.ValidationMessageFor(model => model.TypeOfTruck, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Capacity, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Capacity, new { htmlAttributes = new { @class = "form-control" } })@Html.Label("Ton")
+                        @Html.ValidationMessageFor(model => model.Capacity, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OffLoading, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.RadioButtonFor(model => model.OffLoading, "Yes")
+                        @Html.Label("Yes")
+
+                        @Html.RadioButtonFor(model => model.OffLoading, "No")
+                        @Html.Label("No")
+
+                        @Html.ValidationMessageFor(model => model.OffLoading, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Refrigerated, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.RadioButtonFor(model => model.Refrigerated, "Yes")@Html.Label("Yes")
+                        @Html.RadioButtonFor(model => model.Refrigerated, "No")@Html.Label("No")
+
+                        @Html.ValidationMessageFor(model => model.Refrigerated, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ContactNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ContactNumber, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Charges, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.Label("Rs")@Html.EditorFor(model => model.Charges, new { htmlAttributes = new { @class = "form-control" } })@Html.Label("Per day minimum 250 Km")
+                        @Html.ValidationMessageFor(model => model.Charges, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AdditionalCharge, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    <div class="col-md-10">
+                        @Html.Label("Rs")@Html.EditorFor(model => model.AdditionalCharge, new { htmlAttributes = new { @class = "form-control" } })@Html.Label("Per Km")
+                        @Html.ValidationMessageFor(model => model.AdditionalCharge, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DriverCharge, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.Label("Rs")@Html.EditorFor(model => model.DriverCharge, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DriverCharge, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Register" class="btn btn-default" />
+                      
+                    </div>
+                </div>
+            </div>
+
+
+
+        }</body>
+
