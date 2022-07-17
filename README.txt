@@ -1,9 +1,6 @@
 Truck Loader Services Application
 
-
-
 Table of contents
-
 -----------------
 
 * Introduction
@@ -29,8 +26,6 @@ CSS
 Bootstrap4
 SQL
 
-
-
 -----------------
 
 Configuration
@@ -38,7 +33,6 @@ Configuration
 Truck Loader
 
 Truck Loader folder consists of controllers, models, views and all initialization folders for MVC project.
-
 
 -----------------
 
